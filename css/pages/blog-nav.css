@@ -48,6 +48,7 @@
     font-size: 0.85rem;
     color: var(--accent-light);
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .category-badge {
@@ -77,23 +78,6 @@
     color: var(--section-dark-text);
     margin: 1rem 0 1.5rem;
     line-height: 1.6;
-}
-
-.read-more {
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-}
-
-.read-more:hover {
-    color: var(--accent-hover);
-}
-
-.read-more::after {
-    content: '→';
-    margin-left: 0.5rem;
 }
 
 /* Responsive Design */
