@@ -11,6 +11,8 @@
     --section-dark-text: #d1d5db;
     --section-purple-gradient: linear-gradient(to right, var(--accent), #7c3aed);
     --sidebar-bg: color-mix(in srgb, var(--bg) 95%, var(--accent) 5%);
+    --hover-bg: rgba(0, 0, 0, 0.05);
+    --hover-grey: #acacace6;
 
     /* Accent Colors */
     --accent: #3b82f6;

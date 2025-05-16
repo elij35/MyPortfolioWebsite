@@ -115,6 +115,11 @@
     border-radius: 50px;
 }
 
+.header-actions .btn-outline {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .blog-title {
@@ -131,5 +136,12 @@
 
     .blog-content h2 {
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-actions .btn-outline {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.8rem;
     }
 }

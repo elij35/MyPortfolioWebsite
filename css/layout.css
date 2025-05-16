@@ -35,7 +35,7 @@
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 15%;
+    width: 25%;
     height: 5px;
     background: var(--section-purple-gradient);
     border-radius: var(--border-radius);
