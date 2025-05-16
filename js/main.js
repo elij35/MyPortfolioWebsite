@@ -5,16 +5,36 @@ document.addEventListener("DOMContentLoaded", () => {
     let mobileMenuBtn = null;
     let mobileMenu = null;
     let scrollTimeout;
+    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const direction = currentScroll > lastScrollTop ? "down" : "up";
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+        let activeSectionId = null;
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const offset = 150; // adjust based on header height
+            if (rect.top <= offset && rect.bottom > offset) {
+                activeSectionId = section.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active", "scroll-up", "scroll-down");
+
+            const href = link.getAttribute("href").replace("#", "");
+            if (href === activeSectionId) {
+                link.classList.add("active");
+                link.classList.add(direction === "down" ? "scroll-down" : "scroll-up");
+            }
+        });
+    });
 
     // Set dark theme by default
     body.setAttribute("data-theme", "dark");
-
-    // Scroll progress indicator
-    window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        scrollProgress.style.width = (scrollTop / docHeight) * 100 + "%";
-    });
 
     // Detection for nav highlighting
     const updateActiveNav = () => {
