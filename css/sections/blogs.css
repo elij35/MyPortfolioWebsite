@@ -11,31 +11,6 @@
     padding: 0 1.5rem;
 }
 
-#blogs h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-    color: var(--text);
-    position: relative;
-    text-align: center;
-}
-
-#blogs h2 .section-number {
-    color: var(--accent);
-    margin-right: 0.5rem;
-}
-
-#blogs h2::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--accent);
-    border-radius: var(--border-radius);
-}
-
 /* Card Grid */
 #blogs .card-grid {
     display: grid;
