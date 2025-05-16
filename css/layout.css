@@ -45,32 +45,47 @@
 
 /* Page splitter */
 .page-splitter {
-    width: 40%;
-    height: 2px;
-    margin: 3rem auto;
-    background: linear-gradient(90deg,
-            transparent,
-            var(--accent),
-            transparent);
+    width: 60%;
+    height: 1px;
+    margin: 4rem auto;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
     position: relative;
+    animation: pulse-splitter 3s ease-in-out infinite;
+    opacity: 0.9;
 }
 
 .page-splitter::before,
 .page-splitter::after {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border: 2px solid var(--accent);
     transform: rotate(45deg);
+    background-color: var(--bg, #fff);
+    box-shadow: 0 0 8px var(--accent);
 }
 
 .page-splitter::before {
-    left: -15px;
-    top: -5px;
+    left: -20px;
+    top: -5.5px;
 }
 
 .page-splitter::after {
-    right: -15px;
-    top: -5px;
+    right: -20px;
+    top: -5.5px;
+}
+
+@keyframes pulse-splitter {
+
+    0%,
+    100% {
+        opacity: 0.9;
+        filter: drop-shadow(0 0 0px var(--accent));
+    }
+
+    50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 4px var(--accent));
+    }
 }

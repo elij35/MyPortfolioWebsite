@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eli's Blog</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/utilities.css">
+    <link rel="stylesheet" href="css/pages/blog-nav.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="background-particles"></div>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">Eli Bowen</div>
+            <nav class="site-nav">
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#blogs" class="active">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container blog-index">
+        <section class="section">
+            <div class="blog-header">
+                <h1>Cyber Security Blog</h1>
+                <p class="subtitle">Thoughts, tutorials, and stories from my security journey</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-preview">
+                    <div class="preview-content">
+                        <div class="preview-meta">
+                            <span class="category-badge">Networking</span>
+                            <span class="date">May 12, 2025</span>
+                            <span class="read-time">2 min read</span>
+                        </div>
+                        <h2><a href="blogs/wifiguard-blog.html">How I Broke My Own Wi-Fi</a></h2>
+                        <p class="excerpt">A cautionary tale of misconfigured DHCP servers, network chaos, and the
+                            recovery process that taught me valuable lessons about network resilience.</p>
+                        <div class="preview-footer">
+                            <a href="blogs/wifiguard-blog.html" class="read-more">Continue Reading →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">Eli Bowen</div>
+                    <p>Cyber Security Student & Developer</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Explore</h4>
+                        <a href="blogs.html">All Blogs</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="https://github.com/elij35" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/eli-bowen" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Eli Bowen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
