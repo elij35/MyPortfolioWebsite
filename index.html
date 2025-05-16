@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Eli Bowen - Portfolio</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="css/base.css">
@@ -30,7 +31,10 @@
 
     <header class="site-header">
         <div class="container header-container">
-            <div class="logo">Eli Bowen</div>
+            <a href="#hero" class="logo" aria-label="Homepage">
+                <img src="images/logo.png" alt="EB logo">
+                <span>Eli Bowen</span>
+            </a>
             <nav class="site-nav">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
@@ -44,7 +48,7 @@
 
     <main>
         <!-- HEADER SECTION -->
-        <section class="hero">
+        <section id="hero" class="hero">
             <div class="hero-content">
                 <h1>Eli Bowen</h1>
                 <p class="tagline">Cyber Security Student</p>
