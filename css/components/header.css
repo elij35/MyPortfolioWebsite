@@ -8,12 +8,7 @@
     z-index: 900;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: background-color var(--transition);
-    height: auto;
-    /* Changed from fixed height to auto for better responsiveness */
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0;
-    /* Added padding for better spacing */
+    padding-bottom: 0;
 }
 
 .header-container {
@@ -25,7 +20,6 @@
     margin: 0 auto;
     padding: 0 1.5rem;
     flex-wrap: wrap;
-    /* Allow items to wrap on small screens */
 }
 
 .logo {
@@ -62,13 +56,11 @@
 
 .btn {
     white-space: nowrap;
-    /* Prevent button text from wrapping */
 }
 
 @media (max-width: 768px) {
     .header-container {
         flex-direction: row;
-        /* Keep horizontal layout but allow wrapping */
         gap: 1rem;
         padding: 0.5rem 1rem;
     }
@@ -76,25 +68,20 @@
     .logo {
         margin-top: 0;
         font-size: 1.2rem;
-        /* Slightly smaller text on mobile */
     }
 
     .logo img {
         width: 36px;
         height: 36px;
-        /* Slightly smaller logo on mobile */
     }
 
     .header-actions {
         width: auto;
-        /* Don't force full width */
         margin-left: auto;
-        /* Push to the right */
     }
 
     .btn {
         width: auto;
-        /* Don't force full width */
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
@@ -123,7 +110,6 @@
     }
 }
 
-/* Rest of your existing nav styles... */
 .site-nav {
     display: flex;
     gap: 1.5rem;
@@ -168,4 +154,26 @@
     .site-nav {
         display: none;
     }
+}
+
+.header-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.tagline-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.tagline-divider {
+    height: 1px;
+    background-color: var(--accent);
+    width: 100%;
+    margin: 0.5rem auto 0;
+    max-width: 200px;
 }
