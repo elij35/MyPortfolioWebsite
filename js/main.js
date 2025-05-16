@@ -4,85 +4,73 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     let mobileMenuBtn = null;
     let mobileMenu = null;
-    let scrollTimeout;
-    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        const direction = currentScroll > lastScrollTop ? "down" : "up";
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-
-        let activeSectionId = null;
-
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            const offset = 150; // adjust based on header height
-            if (rect.top <= offset && rect.bottom > offset) {
-                activeSectionId = section.id;
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active", "scroll-up", "scroll-down");
-
-            const href = link.getAttribute("href").replace("#", "");
-            if (href === activeSectionId) {
-                link.classList.add("active");
-                link.classList.add(direction === "down" ? "scroll-down" : "scroll-up");
-            }
-        });
-    });
+    let lastScrollTop = window.pageYOffset;
+    let currentActiveLink = null;
 
     // Set dark theme by default
     body.setAttribute("data-theme", "dark");
 
-    // Detection for nav highlighting
-    const updateActiveNav = () => {
-        const scrollPosition = window.scrollY + (window.innerHeight / 3);
+    // Scroll handler for directional navigation
+    const handleScroll = () => {
+        const currentScroll = window.pageYOffset;
+        const direction = currentScroll > lastScrollTop ? "down" : "up";
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 
-        // Reset all active states
-        navLinks.forEach(link => link.classList.remove("active"));
-
-        // Find the section in view
+        // Finds which section is currently in view
         let activeSection = null;
+        const viewportMiddle = window.scrollY + (window.innerHeight / 2);
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            if (viewportMiddle >= sectionTop && viewportMiddle <= sectionBottom) {
                 activeSection = section.id;
             }
         });
 
-        // Set active state on corresponding nav link
+        // Updates navigation
         if (activeSection) {
-            const activeLink = document.querySelector(`.site-nav a[href="#${activeSection}"]`);
-            if (activeLink) activeLink.classList.add("active");
+            const newActiveLink = document.querySelector(`.site-nav a[href="#${activeSection}"]`);
+
+            if (newActiveLink && newActiveLink !== currentActiveLink) {
+                // Removes all active classes
+                navLinks.forEach(link => {
+                    link.classList.remove("active", "scroll-down", "scroll-up");
+                });
+
+                // Add appropriate classes to new active link
+                newActiveLink.classList.add("active", `scroll-${direction}`);
+                currentActiveLink = newActiveLink;
+            }
         }
     };
 
-    // Throttle scroll events for performance
+    // Throttled scroll event
+    let ticking = false;
     window.addEventListener("scroll", () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(updateActiveNav, 50);
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 
     // Initialize active nav on load
-    updateActiveNav();
+    handleScroll();
 
-    // Create mobile menu for smaller screens
+    // Mobile menu functionality
     const createMobileMenu = () => {
-        // Create menu button
         mobileMenuBtn = document.createElement("button");
         mobileMenuBtn.className = "mobile-menu-btn";
         mobileMenuBtn.innerHTML = "☰";
         mobileMenuBtn.setAttribute("aria-label", "Toggle menu");
 
-        // Create mobile menu
         mobileMenu = document.createElement("div");
         mobileMenu.className = "mobile-menu";
 
-        // Create menu header with close button
         const menuHeader = document.createElement("div");
         menuHeader.className = "mobile-menu-header";
 
@@ -98,30 +86,27 @@ document.addEventListener("DOMContentLoaded", () => {
         menuHeader.appendChild(closeButton);
         mobileMenu.appendChild(menuHeader);
 
-        // Clone navigation links
         const navClone = document.querySelector(".site-nav").cloneNode(true);
+        mobileMenu.appendChild(navClone);
+        document.body.appendChild(mobileMenu);
+
+        document.querySelector(".header-container").appendChild(mobileMenuBtn);
+
+        mobileMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+            document.body.classList.toggle("no-scroll");
+        });
+
+        // Close menu when clicking a link
         navClone.querySelectorAll("a").forEach(link => {
             link.addEventListener("click", () => {
                 mobileMenu.classList.remove("active");
                 document.body.classList.remove("no-scroll");
             });
         });
-
-        mobileMenu.appendChild(navClone);
-        document.body.appendChild(mobileMenu);
-
-        // Insert button in header
-        const header = document.querySelector(".header-container");
-        header.appendChild(mobileMenuBtn);
-
-        // Toggle menu on button click
-        mobileMenuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("active");
-            document.body.classList.toggle("no-scroll");
-        });
     };
 
-    // Check screen width and initialize mobile menu if needed
+    // Responsive menu check
     const checkScreenSize = () => {
         if (window.innerWidth <= 768 && !mobileMenuBtn) {
             createMobileMenu();
@@ -133,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Initial check and window resize listener
+    // Initialize
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
 
@@ -164,7 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
-
             const targetId = this.getAttribute("href");
             if (targetId === "#") return;
 
