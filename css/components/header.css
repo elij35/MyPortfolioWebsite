@@ -105,7 +105,7 @@
     max-width: 1200px;
 }
 
-/* Updated Mobile Menu Styles */
+/* Mobile Menu Styles */
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -182,9 +182,7 @@
     overflow: hidden;
 }
 
-/* ======================
-   Responsive Styles
-   ====================== */
+/* Mobile friendly media */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: row;
