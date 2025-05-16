@@ -9,6 +9,7 @@
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --section-dark-bg: #1a1a1a;
     --section-dark-text: #d1d5db;
+    --section-purple-gradient: linear-gradient(to right, var(--accent), #7c3aed);
 
     /* Accent Colors */
     --accent: #3b82f6;

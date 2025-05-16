@@ -37,7 +37,6 @@
     margin-right: 22px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .section {
         padding: 3rem 0;
