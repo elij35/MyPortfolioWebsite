@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     // DOM elements
-    const scrollProgress = document.getElementById("scrollProgress");
     const navLinks = document.querySelectorAll(".site-nav a");
     const sections = document.querySelectorAll("section");
     const body = document.body;

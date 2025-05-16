@@ -6,11 +6,14 @@
     top: 0;
     background-color: var(--bg);
     z-index: 900;
-    transition: all var(--transition);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    height: var(--header-height);
+    transition: background-color var(--transition);
+    height: auto;
+    /* Changed from fixed height to auto for better responsiveness */
     display: flex;
     align-items: center;
+    padding: 0.5rem 0;
+    /* Added padding for better spacing */
 }
 
 .header-container {
@@ -18,23 +21,26 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    flex-wrap: wrap;
+    /* Allow items to wrap on small screens */
 }
 
 .logo {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--accent);
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    transition: opacity var(--transition), transform var(--transition);
     text-decoration: none;
+    gap: 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
 }
 
 .logo img {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -45,6 +51,79 @@
     transform: scale(1.05) rotate(1deg);
 }
 
+.logo-text {
+    display: inline-block;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    white-space: nowrap;
+    /* Prevent button text from wrapping */
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        /* Keep horizontal layout but allow wrapping */
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .logo {
+        margin-top: 0;
+        font-size: 1.2rem;
+        /* Slightly smaller text on mobile */
+    }
+
+    .logo img {
+        width: 36px;
+        height: 36px;
+        /* Slightly smaller logo on mobile */
+    }
+
+    .header-actions {
+        width: auto;
+        /* Don't force full width */
+        margin-left: auto;
+        /* Push to the right */
+    }
+
+    .btn {
+        width: auto;
+        /* Don't force full width */
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Rest of your existing nav styles... */
 .site-nav {
     display: flex;
     gap: 1.5rem;
