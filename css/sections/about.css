@@ -77,20 +77,20 @@
         align-items: flex-start;
         gap: 3rem;
     }
-    
+
     .profile-pic-container {
         margin-top: 1rem;
     }
-    
+
     .about-text {
         text-align: left;
     }
-    
+
     .about-highlights {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .highlight-card {
         flex: 1;
         min-width: 0;
