@@ -10,11 +10,12 @@
     --section-dark-bg: #1a1a1a;
     --section-dark-text: #d1d5db;
     --section-purple-gradient: linear-gradient(to right, var(--accent), #7c3aed);
+    --sidebar-bg: color-mix(in srgb, var(--bg) 95%, var(--accent) 5%);
 
     /* Accent Colors */
     --accent: #3b82f6;
     --accent-hover: #2563eb;
-    --accent-light: #93c5fd;
+    --accent-light: color-mix(in srgb, var(--accent), white 20%);
 
     /* Sizing & Spacing */
     --progress-height: 5px;
