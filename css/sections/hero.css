@@ -25,8 +25,6 @@
     margin-bottom: 1rem;
     line-height: 1.2;
     background: var(--section-purple-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
 }
@@ -34,7 +32,7 @@
 .tagline {
     font-weight: 400;
     font-size: clamp(1rem, 4vw, 1.5rem);
-    color: var(----section-purple-gradient);
+    color: var(--accent);
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
