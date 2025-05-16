@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // DOM elements
     const navLinks = document.querySelectorAll(".site-nav a");
     const sections = document.querySelectorAll("section");
     const body = document.body;
+    let mobileMenuBtn = null;
+    let mobileMenu = null;
+    let scrollTimeout;
 
     // Set dark theme by default
     body.setAttribute("data-theme", "dark");
@@ -14,9 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollProgress.style.width = (scrollTop / docHeight) * 100 + "%";
     });
 
-    // Improved section detection for nav highlighting
+    // Detection for nav highlighting
     const updateActiveNav = () => {
-        const scrollPosition = window.scrollY + 100;
+        const scrollPosition = window.scrollY + (window.innerHeight / 3);
 
         // Reset all active states
         navLinks.forEach(link => link.classList.remove("active"));
@@ -40,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Throttle scroll events for performance
-    let scrollTimeout;
     window.addEventListener("scroll", () => {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(updateActiveNav, 50);
@@ -61,6 +62,22 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileMenu = document.createElement("div");
         mobileMenu.className = "mobile-menu";
 
+        // Create menu header with close button
+        const menuHeader = document.createElement("div");
+        menuHeader.className = "mobile-menu-header";
+
+        const closeButton = document.createElement("button");
+        closeButton.className = "mobile-menu-close";
+        closeButton.innerHTML = "✕";
+        closeButton.setAttribute("aria-label", "Close menu");
+        closeButton.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            document.body.classList.remove("no-scroll");
+        });
+
+        menuHeader.appendChild(closeButton);
+        mobileMenu.appendChild(menuHeader);
+
         // Clone navigation links
         const navClone = document.querySelector(".site-nav").cloneNode(true);
         navClone.querySelectorAll("a").forEach(link => {
@@ -75,13 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Insert button in header
         const header = document.querySelector(".header-container");
-        header.appendChild(mobileMenuBtn); // Changed from insertBefore since theme toggle is removed
+        header.appendChild(mobileMenuBtn);
 
         // Toggle menu on button click
         mobileMenuBtn.addEventListener("click", () => {
             mobileMenu.classList.toggle("active");
             document.body.classList.toggle("no-scroll");
-            mobileMenuBtn.innerHTML = mobileMenu.classList.contains("active") ? "✕" : "☰";
         });
     };
 
@@ -122,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("scroll", animateOnScroll);
-    animateOnScroll(); // Run once on load
+    animateOnScroll();
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
