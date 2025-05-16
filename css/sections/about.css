@@ -1,0 +1,105 @@
+﻿/* ======================
+   ABOUT SECTION
+   ====================== */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-pic-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.about-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.highlight-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.highlight-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-card h4 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.highlight-card p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+    
+    .profile-pic-container {
+        margin-top: 1rem;
+    }
+    
+    .about-text {
+        text-align: left;
+    }
+    
+    .about-highlights {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .highlight-card {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .profile-pic-container {
+        width: 180px;
+        height: 180px;
+    }
+}

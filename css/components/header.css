@@ -1,0 +1,74 @@
+/* ======================
+   HEADER & NAVIGATION
+   ====================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg);
+    z-index: 900;
+    transition: all var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--accent);
+}
+
+.site-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.site-nav a {
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    color: var(--text);
+    text-decoration: none;
+    transition: color var(--transition);
+    font-size: 0.95rem;
+}
+
+.site-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width var(--transition);
+}
+
+.site-nav a:hover {
+    color: var(--accent);
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+    width: 100%;
+}
+
+.site-nav a.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .site-nav {
+        display: none;
+    }
+}

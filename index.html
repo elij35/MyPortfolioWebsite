@@ -1,87 +1,249 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Eli Bowen - Portfolio</title>
-    <link rel="stylesheet" href="css/site.css">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/utilities.css">
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/about.css">
+    <link rel="stylesheet" href="css/sections/skills.css">
+    <link rel="stylesheet" href="css/sections/experience.css">
+    <link rel="stylesheet" href="css/sections/contact.css">
+    <script src="js/main.js"></script>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-            </ul>
-        </nav>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="background-particles"></div>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">Eli Bowen</div>
+            <nav class="site-nav">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#blogs">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <img src="images/profile_pic.jpg" alt="Profile Picture" class="profile-pic">
-        <h1>Eli Bowen</h1>
-        <p>BSc Computer Science (Cyber Security) Student at the University of Plymouth</p>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Eli Bowen</h1>
+                <p class="tagline">Cyber Security Student</p>
+                <p class="cta">Student at Plymouth University</p>
+                <a href="#about" class="btn btn-hero">Explore My Work</a>
+            </div>
+        </section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>I am a highly motivated final-year Computer Science (Cyber Security) student at the University of Plymouth, currently working at the National Cyber Resilience Centre. I specialize in security awareness training, vulnerability assessments, and ethical hacking.</p>
-    </section>
+        <div class="page-splitter"></div>
 
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Clear communication of complex cybersecurity concepts</li>
-            <li>Effective teamwork in academic and professional settings</li>
-            <li>Strong time management and multitasking</li>
-        </ul>
-    </section>
+        <section id="about" class="section">
+            <div class="container">
+                <h2><span class="section-number">01</span>About Me</h2>
+                <div class="about-content">
+                    <div class="profile-pic-container">
+                        <img src="images/profile/profile.jpg" alt="Eli Bowen Profile Picture" class="profile-pic">
+                    </div>
+                    <div class="about-text-container">
+                        <div class="about-text">
+                            <p>Hi, I'm Eli—an ethical hacking enthusiast and full-stack developer with a passion for
+                                building secure, user-friendly applications. I document my tech journey and share
+                                security insights through my blog.</p>
+                            <p>Currently pursuing a First Class BSc in Computer Science, I have hands-on experience in
+                                penetration testing, Flutter development, and secure API design.</p>
+                        </div>
+                        <div class="about-highlights">
+                            <div class="highlight-card">
+                                <div class="highlight-icon">🎓</div>
+                                <h4>Education</h4>
+                                <p>BSc Computer Science (First Class)</p>
+                            </div>
+                            <div class="highlight-card">
+                                <div class="highlight-icon">🔒</div>
+                                <h4>Focus</h4>
+                                <p>Application Security & Ethical Hacking</p>
+                            </div>
+                            <div class="highlight-card">
+                                <div class="highlight-icon">💻</div>
+                                <h4>Stack</h4>
+                                <p>Flutter, Python, JavaScript, Docker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="technical" class="technical">
-        <h2>Technical Proficiency</h2>
-        <ul>
-            <li><strong>Operating Systems:</strong> Windows, Linux, Android, macOS</li>
-            <li><strong>Security Tools:</strong> Nessus, Kali Linux, Burp Suite, Wireshark</li>
-            <li><strong>Networking:</strong> Ports, firewalls, security protocols</li>
-            <li><strong>Programming:</strong> Python, C#, Java, Kotlin, SQL</li>
-        </ul>
-    </section>
+        <section id="projects" class="section section-dark">
+            <div class="container">
+                <h2><span class="section-number">02</span>Featured Projects</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Wi-Fi Guard</h3>
+                            <span class="card-badge">Security</span>
+                        </div>
+                        <p>Android app designed for non-technical users to scan and secure their home networks with
+                            intuitive security recommendations.</p>
+                        <div class="card-footer">
+                            <a href="https://github.com/elij35/WiFiGuard" target="_blank" class="card-link">View
+                                Repository →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="experience" class="experience">
-        <h2>Work Experience</h2>
-        <div class="job">
-            <h3>Cyber Security Consultant - Southwest Cyber Resilience Centre</h3>
-            <p><strong>April 2023 - Present</strong></p>
-            <ul>
-                <li>Conducted 30+ security training sessions, reaching 250+ employees.</li>
-                <li>Performed vulnerability assessments with actionable insights.</li>
-                <li>Supervised students in cybersecurity training programs.</li>
-            </ul>
+        <section id="skills" class="section">
+            <div class="container">
+                <h2><span class="section-number">03</span>Skills & Tools</h2>
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Security</h3>
+                        <ul class="skills">
+                            <li>Penetration Testing</li>
+                            <li>OWASP Top 10</li>
+                            <li>Network Security</li>
+                            <li>Cryptography</li>
+                            <li>Burp Suite</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Development</h3>
+                        <ul class="skills">
+                            <li>Flutter</li>
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>Docker</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Other</h3>
+                        <ul class="skills">
+                            <li>Linux</li>
+                            <li>Kali Linux</li>
+                            <li>Technical Writing</li>
+                            <li>UI/UX Principles</li>
+                            <li>Agile Methodologies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section section-dark">
+            <div class="container">
+                <h2><span class="section-number">04</span>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Plymouth University Student</h3>
+                            <p class="timeline-company">University Cyber Lab</p>
+                            <p>Conducted vulnerability assessments on campus systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blogs" class="section">
+            <div class="container">
+                <h2><span class="section-number">05</span>Latest Blog Posts</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>How I Broke My Own Wi-Fi</h3>
+                            <span class="card-badge">Networking</span>
+                        </div>
+                        <p class="meta">May 10, 2025 · 8 min read</p>
+                        <p>A cautionary tale of misconfigured DHCP servers, network chaos, and the recovery process that
+                            taught me valuable lessons about network resilience.</p>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">Read Post →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-footer">
+                    <a href="blog.html" class="btn btn-outline">View All Posts</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-dark">
+            <div class="container">
+                <h2><span class="section-number">06</span>Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>I'm currently open to internship opportunities, security research collaborations, or
+                            interesting tech discussions.</p>
+                        <div class="contact-methods">
+                            <a href="mailto:eli@elijbowen.com" class="contact-link">
+                                <span class="contact-icon">✉️</span> eli@elijbowen.com
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">Eli Bowen</div>
+                    <p>Cyber Security Student & Developer</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Explore</h4>
+                        <a href="blog.html">Blog</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="https://github.com/elij35" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/eli-bowen" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Eli Bowen. All rights reserved.</p>
+            </div>
         </div>
-    </section>
-
-    <section id="education" class="education">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>University of Plymouth (2022 - Present)</strong> - BSc Computer Science (Cyber Security)</li>
-            <li><strong>Warwickshire College (2020 - 2022)</strong> - BTEC Extended Diploma in Computing</li>
-            <li><strong>Aylesford School (2015 - 2020)</strong> - 10 GCSEs including Maths, English & Science</li>
-        </ul>
-    </section>
-
-    <footer>
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/eli-bowen" target="_blank" class="footer-link">LinkedIn</a>
-            <button onclick="window.location.href='mailto:needtomake'" class="footer-button">Email Me</button>
-        </div>
-        <p>©2025 Eli Bowen</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>

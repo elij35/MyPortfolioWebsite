@@ -1,0 +1,39 @@
+﻿/* ======================
+   SKILLS SECTION
+   ====================== */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skills-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.skills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skills li {
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all var(--transition);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.skills li:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}

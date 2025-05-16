@@ -1,0 +1,76 @@
+﻿/* ======================
+   LAYOUT COMPONENTS
+   ====================== */
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.section-dark {
+    background-color: var(--section-dark-bg);
+    color: var(--section-dark-text);
+}
+
+.section h2 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-number {
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 0.5rem;
+    opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+/* Page splitter */
+.page-splitter {
+    width: 40%;
+    height: 2px;
+    margin: 3rem auto;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--accent),
+            transparent);
+    position: relative;
+}
+
+.page-splitter::before,
+.page-splitter::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--accent);
+    transform: rotate(45deg);
+}
+
+.page-splitter::before {
+    left: -15px;
+    top: -5px;
+}
+
+.page-splitter::after {
+    right: -15px;
+    top: -5px;
+}
