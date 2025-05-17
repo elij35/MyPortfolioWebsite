@@ -93,3 +93,60 @@
 .hidden {
     display: none;
 }
+
+/* Form Let's Connect Styling */
+.contact-description {
+    margin-bottom: 1.5rem;
+}
+
+.interest-list {
+    margin: 0.5rem 0 1rem 1rem;
+    padding-left: 1rem;
+}
+
+.interest-list li {
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+
+.contact-options {
+    margin-top: 1.5rem;
+}
+
+.contact-methods {
+    margin-top: 1rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.method-label {
+    font-weight: 600;
+    margin-right: 0.8rem;
+    min-width: 60px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.contact-icon {
+    margin-right: 0.7rem;
+    font-size: 1.1em;
+}
