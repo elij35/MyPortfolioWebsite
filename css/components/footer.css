@@ -44,3 +44,11 @@
 .link-group a:hover {
     color: var(--accent);
 }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--section-dark-text);
+    font-size: 0.9rem;
+}
