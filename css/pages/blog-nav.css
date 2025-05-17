@@ -80,13 +80,35 @@
     line-height: 1.6;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .blog-header h1 {
         font-size: 2rem;
     }
 
-    .blog-preview {
-        padding: 1.5rem;
+    .blog-header .subtitle {
+        font-size: 1rem;
+    }
+
+    .excerpt {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .blog-header .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .excerpt {
+        font-size: 0.9rem;
+        margin: 0.75rem 0 1rem;
+    }
+
+    .category-badge {
+        font-size: 0.7rem;
     }
 }
