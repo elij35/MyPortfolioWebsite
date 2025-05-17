@@ -88,6 +88,35 @@
     top: -5.5px;
 }
 
+/* Bullet point lists */
+.bullet-point ul {
+    padding-left: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.bullet-point li {
+    list-style: none;
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.bullet-point li::before {
+    content: '▹';
+    position: absolute;
+    left: -1.2rem;
+    color: var(--accent);
+}
+
+/* Removes margins on a few pages (pretty useful for annoying text elements xD ) */
+#align-center p {
+    text-align: center;
+}
+
+#no-margin {
+    margin: 0;
+}
+
 @keyframes pulse-splitter {
 
     0%,
