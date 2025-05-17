@@ -16,12 +16,21 @@
 .skills-category {
     max-width: 320px;
     width: 100%;
+    background: var(--section-dark-bg);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, opacity 0.4s ease;
+    opacity: 1;
+    transform: translateY(20px);
 }
 
 .skills-category h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     margin-bottom: 1.5rem;
     color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.3px;
     position: relative;
     padding-bottom: 0.75rem;
 }
@@ -32,7 +41,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
+    width: 30%;
     height: 2px;
     background: var(--section-purple-gradient);
     border-radius: 2px;
@@ -44,6 +53,8 @@
     flex-wrap: wrap;
     gap: 0.75rem;
     justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 .skills li {
@@ -56,6 +67,7 @@
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(59, 130, 246, 0.1);
     text-align: center;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 /* Responsive adjustments */
