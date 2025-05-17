@@ -8,6 +8,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components/buttons.css">
@@ -51,11 +52,29 @@
         <!-- HEADER SECTION -->
         <section id="hero" class="hero">
             <div class="hero-content">
+                <div class="profile-photo-container">
+                    <img src="images/profile/profile.jpg" alt="Eli Bowen" class="profile-photo">
+                </div>
+
                 <h1>Eli Bowen</h1>
                 <div class="tagline-container">
                     <p class="tagline">Cyber Security</p>
                 </div>
                 <p class="cta">Student at Plymouth University</p>
+
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/eli-bowen" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/elij35" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:eli@elijbowen.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -129,7 +148,6 @@
                             <li>OWASP Top 10</li>
                             <li>Network Security</li>
                             <li>Cryptography</li>
-                            <li>Burp Suite</li>
                         </ul>
                     </div>
                     <div class="skills-category">
@@ -225,7 +243,12 @@
                             </a>
                         </div>
                     </div>
-                    <form class="contact-form">
+                    <form class="contact-form" name="contact" method="POST" netlify netlify-honeypot="bot-field"
+                        data-netlify-recaptcha="true">
+                        <div class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </div>
+
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -238,6 +261,9 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
+
+                        <div data-netlify-recaptcha="true"></div>
+
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
