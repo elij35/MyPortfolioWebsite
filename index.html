@@ -240,10 +240,10 @@
                             </a>
                         </div>
                     </div>
-                    <form class="contact-form" name="contact" method="POST" netlify netlify-honeypot="bot-field"
-                        data-netlify-recaptcha="true">
+                    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" class="contact-form">
+                        <input type="hidden" name="form-name" value="contact" />
                         <div class="hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            <label>Leave this empty if you're human: <input name="bot-field" /></label>
                         </div>
 
                         <div class="form-group">
@@ -259,8 +259,7 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
 
-                        <div data-netlify-recaptcha="true"></div>
-
+                        <!-- Submit button -->
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
