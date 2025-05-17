@@ -207,4 +207,48 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+        e.preventDefault(); // Prevents the default Netlify redirect
+
+        const form = e.target;
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const feedbackEl = document.getElementById('form-feedback');
+
+        // Disable submit button during submission
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        try {
+            // Submit to Netlify
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString(),
+            });
+
+            if (response.ok) {
+                // Success: Show message & reset form
+                feedbackEl.textContent = 'Message sent successfully!';
+                feedbackEl.className = 'form-feedback success';
+                feedbackEl.classList.remove('hidden');
+                form.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            feedbackEl.textContent = 'Error sending message. Please try again.';
+            feedbackEl.className = 'form-feedback error';
+            feedbackEl.classList.remove('hidden');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+
+            // Hide feedback after 5 seconds
+            setTimeout(() => {
+                feedbackEl.classList.add('hidden');
+            }, 5000);
+        }
+    });
 });

@@ -240,12 +240,14 @@
                             </a>
                         </div>
                     </div>
-                    <form name="contact" method="POST" netlify netlify-honeypot="bot-field" class="contact-form">
+                    <form id="contact-form" name="contact" method="POST" netlify netlify-honeypot="bot-field"
+                        class="contact-form">
                         <input type="hidden" name="form-name" value="contact" />
                         <div class="hidden">
-                            <label>Leave this empty if you're human: <input name="bot-field" /></label>
+                            <label>Don't fill this out: <input name="bot-field" /></label>
                         </div>
 
+                        <!-- Your form fields -->
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -259,9 +261,11 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
 
-                        <!-- Submit button -->
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+
+                    <!-- Success/Error Message (hidden by default) -->
+                    <div id="form-feedback" class="form-feedback hidden"></div>
                 </div>
             </div>
         </section>
