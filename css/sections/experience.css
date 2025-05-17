@@ -3,54 +3,189 @@
    ====================== */
 .timeline {
     position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2rem;
+    margin-top: 3rem;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    height: 100%;
-    width: 2px;
-    background: var(--accent);
+    bottom: 0;
+    left: 40px;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--accent), rgba(138, 43, 226, 0.3));
+    border-radius: 2px;
 }
 
+/* Timeline item container */
 .timeline-item {
     position: relative;
-    margin-bottom: 2.5rem;
-    padding-left: 2rem;
+    display: flex;
+    gap: 2rem;
 }
 
-.timeline-item::before {
+/* Experience card styling */
+.timeline-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -9px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 3px solid var(--bg);
+    left: -20px;
+    top: 40px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid rgba(255, 255, 255, 0.15);
 }
 
+/* Date Styling */
 .timeline-date {
+    font-size: 1rem;
     font-weight: 600;
     color: var(--accent);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    background: rgba(138, 43, 226, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
 }
 
-.timeline-content {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
+/* Company Logo & Header */
+.experience-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
-.timeline-company {
-    font-weight: 600;
+.company-logo {
+    height: 150px;
+    width: auto;
+    max-width: 160px;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.tech-tag {
+    background: rgba(138, 43, 226, 0.15);
     color: var(--accent);
-    margin-bottom: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    transition: all 0.2s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+        gap: 2rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .blob-line {
+        width: 2px;
+        height: calc(100% - 25px);
+        margin-top: -12px;
+        margin-left: 0;
+    }
+
+    .timeline-card {
+        padding: 1.5rem;
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-card::before {
+        left: -15px;
+        top: 30px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid rgba(255, 255, 255, 0.15);
+        border-left: none;
+    }
+
+    .experience-header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .company-logo {
+        height: 100px;
+        max-width: 120px;
+    }
+
+    .timeline-date {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .tech-tags {
+        gap: 0.6rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline {
+        padding-left: 15px;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-card {
+        padding: 1.2rem;
+    }
+
+    .company-logo {
+        height: 80px;
+        max-width: 100px;
+    }
+
+    .experience-header {
+        gap: 0.8rem;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
 }
