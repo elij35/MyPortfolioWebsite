@@ -88,3 +88,25 @@
     opacity: 0.7;
     margin-bottom: 1rem;
 }
+
+.highlight-card {
+    max-width: 320px;
+    width: 100%;
+    background: var(--section-dark-bg);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, opacity 0.4s ease;
+    opacity: 1;
+    transform: translateY(20px);
+}
+
+.highlight-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-card p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}

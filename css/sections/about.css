@@ -1,17 +1,6 @@
 ﻿/* ======================
    ABOUT SECTION
    ====================== */
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.about-text-container {
-    width: 100%;
-    max-width: 800px;
-}
-
 .about-text {
     text-align: left;
     margin-bottom: 2rem;
@@ -26,33 +15,6 @@
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 2rem;
-}
-
-.highlight-card {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    text-align: left;
-    box-shadow: var(--card-shadow);
-    transition: all var(--transition);
-    border: 1px solid rgba(59, 130, 246, 0.1);
-}
-
-.highlight-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.highlight-card h4 {
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    text-align: center;
-}
-
-.highlight-card p {
-    font-size: 0.95rem;
-    opacity: 0.9;
 }
 
 /* Responsive Layout */

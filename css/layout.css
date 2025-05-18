@@ -142,6 +142,31 @@
     transform: translateY(-2px);
 }
 
+/* Blue text H3 headings */
+.h3-heading h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-bottom: 0.75rem;
+    text-align: center;
+}
+
+.h3-heading h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 2px;
+    background: var(--section-purple-gradient);
+    border-radius: 2px;
+}
+
+
 @keyframes pulse-splitter {
 
     0%,
