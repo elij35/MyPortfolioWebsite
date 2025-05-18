@@ -36,15 +36,6 @@
     margin-bottom: 0.75rem;
 }
 
-#blogs .card-badge {
-    background-color: rgba(59, 130, 246, 0.15);
-    color: var(--accent-light);
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-}
-
 #blogs .meta {
     font-size: 0.85rem;
     color: var(--section-dark-text);

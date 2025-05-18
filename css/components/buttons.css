@@ -39,3 +39,46 @@
     padding: 1rem 2.5rem;
     margin-top: 2rem;
 }
+
+/* Blog back button */
+.btn-blog-back {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition:
+        color var(--transition),
+        background-color var(--transition);
+}
+
+.btn-blog-back:hover {
+    color: var(--accent-hover);
+    background: rgba(var(--accent-rgb), 0.08);
+}
+
+.btn-blog-back::before {
+    content: "←";
+    font-size: 1rem;
+    transition: transform var(--transition);
+}
+
+.btn-blog-back:hover::before {
+    transform: translateX(-2px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .btn-blog-back {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-blog-back::before {
+        margin-right: 0;
+        font-size: 1.1rem;
+    }
+}

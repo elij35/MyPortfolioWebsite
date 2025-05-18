@@ -51,15 +51,6 @@
     align-items: center;
 }
 
-.category-badge {
-    background: rgba(59, 130, 246, 0.15);
-    color: var(--accent-light);
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.75rem;
-}
-
 .blog-preview h2 {
     font-size: 1.5rem;
     margin: 0.5rem 0 1rem;
@@ -106,9 +97,5 @@
     .excerpt {
         font-size: 0.9rem;
         margin: 0.75rem 0 1rem;
-    }
-
-    .category-badge {
-        font-size: 0.7rem;
     }
 }

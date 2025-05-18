@@ -28,14 +28,6 @@
     align-items: center;
 }
 
-.blog-category {
-    background: rgba(59, 130, 246, 0.15);
-    color: var(--accent-light);
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-    font-weight: 600;
-}
-
 .blog-date,
 .blog-read-time {
     opacity: 0.8;
