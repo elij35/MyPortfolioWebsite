@@ -1,19 +1,26 @@
 /* ======================
-   BUTTONS
+   BUTTON STYLES
    ====================== */
-.btn {
+
+.btn,
+.btn-outline {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--accent);
-    color: white;
     padding: 0.75rem 1.75rem;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    transition: all var(--transition);
-    border: none;
+    transition: all var(--transition, 0.3s ease);
     cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Solid Button */
+.btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -23,6 +30,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Outline Button */
 .btn-outline {
     background: transparent;
     color: var(--accent);
@@ -30,10 +38,13 @@
 }
 
 .btn-outline:hover {
-    background: var(--accent);
+    background-color: var(--accent);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
+/* Hero Button */
 .btn-hero {
     font-size: 1.1rem;
     padding: 1rem 2.5rem;
@@ -51,8 +62,8 @@
     padding: 0.4rem 0.8rem;
     border-radius: 4px;
     transition:
-        color var(--transition),
-        background-color var(--transition);
+        color var(--transition, 0.3s ease),
+        background-color var(--transition, 0.3s ease);
 }
 
 .btn-blog-back:hover {
@@ -63,14 +74,13 @@
 .btn-blog-back::before {
     content: "←";
     font-size: 1rem;
-    transition: transform var(--transition);
+    transition: transform var(--transition, 0.3s ease);
 }
 
 .btn-blog-back:hover::before {
     transform: translateX(-2px);
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
     .btn-blog-back {
         padding: 0.3rem 0.6rem;
@@ -78,7 +88,6 @@
     }
 
     .btn-blog-back::before {
-        margin-right: 0;
         font-size: 1.1rem;
     }
 }
