@@ -2,8 +2,9 @@
    ABOUT SECTION
    ====================== */
 .about-text {
-    text-align: left;
-    margin-bottom: 2rem;
+    text-align: center;
+    margin: auto;
+    max-width: 650px;
 }
 
 .about-text p {
