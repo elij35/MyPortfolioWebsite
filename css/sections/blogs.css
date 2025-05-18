@@ -1,4 +1,8 @@
-﻿/* Dates and read time on blog cards */
+﻿/* ======================
+   BLOGS SECTION
+   ====================== */
+
+/* Dates and read time on blog cards */
 #blogs .meta {
     font-size: 0.85rem;
     color: var(--section-dark-text);
