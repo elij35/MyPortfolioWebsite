@@ -29,11 +29,9 @@
     border-radius: 50px;
     font-weight: 500;
     font-size: 0.9rem;
-    transition: all var(--transition);
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(59, 130, 246, 0.1);
     text-align: center;
-    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 /* Responsive adjustments */
