@@ -124,7 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add logo to header
         const logoContainer = document.createElement("a");
         logoContainer.className = "mobile-menu-logo";
-        logoContainer.href = "index.html";
+        logoContainer.href = "#hero";
+        logoContainer.addEventListener("click", toggleMobileMenu);
 
         const logoImg = document.createElement("img");
         logoImg.src = "images/logo.png";
