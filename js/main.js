@@ -72,19 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const menuContent = document.createElement("div");
         menuContent.className = "mobile-menu-content";
 
-        // Create header with close button
+        // Create header with logo and close button
         const menuHeader = document.createElement("div");
         menuHeader.className = "mobile-menu-header";
 
-        const closeButton = document.createElement("button");
-        closeButton.className = "mobile-menu-close";
-        closeButton.innerHTML = "✕";
-        closeButton.addEventListener("click", toggleMobileMenu);
-
-        menuHeader.appendChild(closeButton);
-        menuContent.appendChild(menuHeader);
-
-        // Add logo to mobile menu
+        // Add logo to header
         const logoContainer = document.createElement("div");
         logoContainer.className = "mobile-menu-logo";
 
@@ -97,7 +89,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         logoContainer.appendChild(logoImg);
         logoContainer.appendChild(logoText);
-        menuContent.appendChild(logoContainer);
+        menuHeader.appendChild(logoContainer);
+
+        // Add close button
+        const closeButton = document.createElement("button");
+        closeButton.className = "mobile-menu-close";
+        closeButton.innerHTML = "✕";
+        closeButton.addEventListener("click", toggleMobileMenu);
+
+        menuHeader.appendChild(closeButton);
+        menuContent.appendChild(menuHeader);
 
         // Create nav element and clone links
         const mobileNav = document.createElement("nav");

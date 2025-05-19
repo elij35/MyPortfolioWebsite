@@ -64,8 +64,11 @@
 /* Menu header with close button */
 .mobile-menu-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-menu-close {
@@ -77,6 +80,7 @@
     cursor: pointer;
     padding: 0.5rem;
     transition: all var(--transition);
+    margin-left: auto;
 }
 
 .mobile-menu-close:hover {
@@ -90,9 +94,6 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-menu-logo img {
