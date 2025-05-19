@@ -108,11 +108,6 @@
     color: var(--accent);
 }
 
-/* Removes margins on a few pages (pretty useful for annoying text elements xD ) */
-#align-center p {
-    text-align: center;
-}
-
 #no-margin {
     margin: 0;
 }
