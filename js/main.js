@@ -122,8 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
         menuHeader.className = "mobile-menu-header";
 
         // Add logo to header
-        const logoContainer = document.createElement("div");
+        const logoContainer = document.createElement("a");
         logoContainer.className = "mobile-menu-logo";
+        logoContainer.href = "index.html";
 
         const logoImg = document.createElement("img");
         logoImg.src = "images/logo.png";
