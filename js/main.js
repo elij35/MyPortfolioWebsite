@@ -11,7 +11,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set dark theme by default
     body.setAttribute("data-theme", "dark");
 
-    // Scroll handler for directional navigation
+    const updateActiveMobileLink = () => {
+        if (!mobileMenu || !mobileMenu.classList.contains('active')) return;
+
+        const viewportMiddle = window.scrollY + (window.innerHeight / 2);
+        let activeSection = null;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (viewportMiddle >= sectionTop && viewportMiddle <= sectionBottom) {
+                activeSection = section.id;
+            }
+        });
+
+        if (activeSection) {
+            const mobileLinks = document.querySelectorAll('.mobile-menu-nav a');
+            mobileLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    };
+
     const handleScroll = () => {
         const currentScroll = window.pageYOffset;
         const direction = currentScroll > lastScrollTop ? "down" : "up";
@@ -39,6 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 newActiveLink.classList.add("active", `scroll-${direction}`);
                 currentActiveLink = newActiveLink;
             }
+
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                updateActiveMobileLink();
+            }
         }
     };
 
@@ -52,9 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             ticking = true;
         }
+
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            updateActiveMobileLink();
+        }
     });
 
     handleScroll();
+
+    const toggleMobileMenu = () => {
+        if (!mobileMenu || !mobileMenuOverlay) return;
+
+        mobileMenu.classList.toggle("active");
+        mobileMenuOverlay.classList.toggle("active");
+        document.body.classList.toggle("no-scroll");
+
+        if (mobileMenu.classList.contains('active')) {
+            updateActiveMobileLink();
+        }
+    };
 
     const initMobileMenu = () => {
         if (!document.body.classList.contains('has-mobile-menu')) return;
