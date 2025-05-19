@@ -177,13 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    const toggleMobileMenu = () => {
-        if (!mobileMenu || !mobileMenuOverlay) return;
-        mobileMenu.classList.toggle("active");
-        mobileMenuOverlay.classList.toggle("active");
-        document.body.classList.toggle("no-scroll");
-    };
-
     const cleanupMobileMenu = () => {
         if (mobileMenu) {
             mobileMenu.remove();
