@@ -88,11 +88,6 @@
     font-size: 0.95rem;
 }
 
-/* Footer & Links */
-.card-footer {
-    margin-top: auto;
-}
-
 .card-link {
     display: inline-flex;
     align-items: center;
