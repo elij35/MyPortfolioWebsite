@@ -56,10 +56,9 @@
 .timeline-date {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--accent);
     margin-bottom: 1rem;
     display: block;
-    background: rgba(138, 43, 226, 0.1);
+    background-color: var(--accent);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     display: inline-block;
@@ -90,17 +89,6 @@
     flex-wrap: wrap;
     gap: 0.8rem;
     margin-top: 1.5rem;
-}
-
-.tech-tag {
-    background: rgba(138, 43, 226, 0.15);
-    color: var(--accent);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    border: 1px solid rgba(138, 43, 226, 0.3);
-    transition: all 0.2s ease;
 }
 
 /* Mobile Responsiveness */
