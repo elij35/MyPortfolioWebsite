@@ -140,7 +140,6 @@
 #blogs .meta {
     font-size: 0.85rem;
     color: var(--section-dark-text);
-    opacity: 0.8;
     margin-bottom: 1rem;
     display: block;
 }
