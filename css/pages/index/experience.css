@@ -143,6 +143,7 @@
 
     .tech-tags {
         gap: 0.6rem;
+        justify-content: center;
     }
 
     .tech-tag {

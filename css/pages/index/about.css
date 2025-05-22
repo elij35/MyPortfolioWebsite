@@ -36,3 +36,9 @@
         min-width: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .about-highlights{
+        align-items: center;
+    }
+}
