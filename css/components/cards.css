@@ -67,16 +67,13 @@
 /* Badge */
 .card-badge {
     font-size: 0.7rem;
-    padding: 0.35rem 0.8rem;
-    background-color: var(--accent);
-    color: white;
-    border-radius: 50px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    position: relative;
-    top: -2px;
-    text-align: center;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--tag-bg, rgba(59, 130, 246, 0.2));
+    color: var(--tag-text, var(--accent-light));
+    border-radius: 20px;
+    font-weight: 500;
+    align-content: center;
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 /* Card Body */
