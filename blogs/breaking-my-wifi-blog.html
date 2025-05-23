@@ -46,49 +46,52 @@
                     <span class="blog-read-time">2 min read</span>
                 </div>
                 <h1 class="blog-title">How I Broke My Own Wi-Fi</h1>
-                <p class="blog-subtitle">A cautionary tale of misconfigured DHCP servers and network chaos</p>
+                <p class="blog-subtitle">A short story on how I misconfigured DHCP servers and created network chaos</p>
             </header>
 
             <div class="blog-content">
-                <p class="blog-intro">It started as a simple experiment to optimize my home network. Little did I know I
-                    was about to take down internet access for every device in my apartment...</p>
-
-                <h2>The Setup</h2>
-                <p>I had recently acquired a Raspberry Pi and decided to repurpose it as a network controller. My goal
-                    was to implement more granular control over my IoT devices while improving security. The plan seemed
-                    straightforward:</p>
-
+                <p class="blog-intro">
+                    It all started as a simple home project—optimise the network, tighten up security,
+                    and get smarter about device management. What actually happened? I accidentally knocked every device
+                    in my flat offline.
+                </p>
+                <h2>The Plan</h2>
+                <p>
+                    I'd just picked up a Raspberry Pi and decided to repurpose it as a network controller. The idea was
+                    solid: better security and more control over all the IoT devices cluttering my Wi-Fi. <br> My plan
+                    looked like this:
+                </p>
                 <ul>
-                    <li>Set up a local DNS server</li>
-                    <li>Configure DHCP to assign static IPs to trusted devices</li>
-                    <li>Implement VLAN segmentation</li>
+                    <li>Run a local DNS server</li>
+                    <li>Set up static IPs via DHCP for known devices</li>
+                    <li>Segment the network using VLANs</li>
                 </ul>
-
-                <h2>The Mistake</h2>
-                <p>In my enthusiasm, I made two critical errors:</p>
-
+                <h2>What Went Wrong</h2>
+                <p>
+                    Here's where things unravelled. I made two rookie mistakes:
+                </p>
                 <ol>
-                    <li>I didn't properly document my original router settings</li>
-                    <li>I enabled the Pi's DHCP server without disabling the router's DHCP service</li>
+                    <li>I forgot to document my router's original config</li>
+                    <li>Enabled the Pi's DHCP server *without* turning off the router's DHCP</li>
                 </ol>
-
-                <p>The result? A classic case of DHCP server conflict that immediately caused all connected devices to
-                    lose internet access as they received conflicting IP assignments.</p>
-
-                <h2>The Recovery</h2>
-                <p>After 30 minutes of panic, I systematically:</p>
-
+                <p>
+                    Result? IP address chaos. Devices didn't know where to connect, and the entire network crashed.
+                    No internet. No smart lights. Not even Spotify.
+                </p>
+                <h2>Recovery Mode</h2>
+                <p>After a short panic, I got to work:</p>
                 <ol>
-                    <li>Disconnected the Pi from the network</li>
-                    <li>Factory reset my router</li>
-                    <li>Reconfigured all devices manually</li>
+                    <li>Powered off the Pi, which disconnected it from the network</li>
+                    <li>Hard-reset the router</li>
+                    <li>Reconfigured everything from scratch</li>
                 </ol>
-
-                <p>The entire ordeal taught me a valuable lesson when changing network settings:</p>
-
+                <h2>Lesson learned?</h2>
+                <p>
+                    Don't wing critical settings changes without backing up your config first.
+                </p>
                 <blockquote class="blog-quote">
-                    Always maintain a backup configuration and make changes incrementally. What seems like a simple
-                    tweak can have unforeseen effects on network stability.
+                    One small misconfiguration for a man, one giant mess for my entire
+                    flat.
                 </blockquote>
             </div>
 
