@@ -68,7 +68,7 @@
     position: absolute;
     bottom: -8px;
     left: 0;
-    width: 60px;
+    width: 45%;
     height: 3px;
     background: var(--accent);
     border-radius: var(--border-radius);
@@ -88,7 +88,6 @@
 }
 
 .blog-intro {
-    font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 2rem !important;
 }
