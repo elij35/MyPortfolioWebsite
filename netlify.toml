@@ -1,7 +1,13 @@
+[functions]
+  [functions.emails]
+  included_files = [
+    "./emails/**"
+  ]
+
 [[headers]]
 for = "/*"
   [headers.values]
-  Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+  Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
   X-Frame-Options = "DENY"
   X-Content-Type-Options = "nosniff"
   Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
