@@ -2,8 +2,8 @@
 <html lang="en" data-theme="auto">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Eli Bowen - Projects</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet"
@@ -18,67 +18,72 @@
     <link rel="stylesheet" href="css/components/mobile-menu.css">
     <link rel="stylesheet" href="css/components/utilities.css">
     <link rel="stylesheet" href="css/pages/project/project.css">
+    <script src="scripts/index.js"></script>
 </head>
 
-<body>
+<body class="has-mobile-menu">
     <div class="background-particles"></div>
 
     <header class="site-header">
         <div class="container header-container">
-            <a href="index.html" class="logo" aria-label="Homepage">
+            <div class="logo">
                 <img src="images/logo.png" alt="EB logo">
-                <span class="logo-text">Eli Bowen</span>
-            </a>
-            <nav class="header-actions">
-                <a href="index.html#projects" class="btn-blog-back">
-                    <span class="btn-blog-text">Back To Home</span>
-                </a>
+                <span>Eli Bowen</span>
+            </div>
+            <nav class="site-nav">
+                <a href="index.html#hero">Home</a>
+                <a href="index.html#about">About</a>
+                <a class=active href="index.html#projects">Projects</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#experience">Experience</a>
             </nav>
         </div>
         <div class="header-divider"></div>
     </header>
 
     <main class="projects-container">
-        <header class="page-header">
-            <h1 class="page-title">My Projects</h1>
-            <p class="page-subtitle">A collection of my work showcasing problem-solving skills, technical abilities, and
-                creative solutions.</p>
-        </header>
+        <div class="section">
+            <header class="page-header">
+                <h2 class="page-title">My Projects</h2>
+                <p class="page-subtitle">A collection of my work showcasing problem-solving skills, technical abilities,
+                    and
+                    creative solutions.</p>
+            </header>
 
-        <div class="projects-grid">
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                        alt="Data Visualization Dashboard">
-                </div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3 class="project-title">Data Visualization Dashboard</h3>
-                        <p class="project-description">Interactive dashboard for complex datasets with real-time
-                            updates, filtering, and export capabilities.</p>
+            <div class="projects-grid">
+                <!-- Cyber Security Projects -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Cyber Security Projects">
                     </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">D3.js</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Pawsome Pet Taxi Service</h3>
+                            <p class="project-description">
+                                A website for a Solihull pet taxi service, taking pets and their owners to and from vet
+                                appointments and other destinations safely and in comfort.
+                            </p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="card-badge">HTML</span>
+                            <span class="card-badge">CSS</span>
+                            <span class="card-badge">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/elij35/PawsomePetTaxi" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Repo
+                            </a>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-date">
+                                <i class="far fa-calendar-alt"></i> Ongoing
+                            </span>
+                            <span class="project-status">Active</span>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="#" class="btn btn-outline">
-                            <i class="fab fa-github"></i> Source Code
-                        </a>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-date">
-                            <i class="far fa-calendar-alt"></i> June 2023
-                        </span>
-                        <span class="project-status">Completed</span>
-                    </div>
-                </div>
-            </article>
+                </article>
+            </div>
         </div>
     </main>
 
@@ -90,10 +95,6 @@
                     <p>Cyber Security Student & Developer</p>
                 </div>
                 <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Explore</h4>
-                        <a href="blogs.html">All Blogs</a>
-                    </div>
                     <div class="link-group">
                         <h4>Connect</h4>
                         <a href="https://github.com/elij35" target="_blank">GitHub</a>
