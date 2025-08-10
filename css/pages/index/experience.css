@@ -7,7 +7,6 @@
     padding-left: 40px;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
 }
 
 .timeline::before {
@@ -85,7 +84,7 @@
     object-fit: contain;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     background-color: #fff;
-    padding: 0.5rem;
+    padding: 0.2rem;
     transition: transform 0.3s ease;
 }
 
