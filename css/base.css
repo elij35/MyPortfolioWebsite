@@ -2,22 +2,25 @@
    VARIABLES & BASE STYLES
    ====================== */
 :root {
-    /* Dark Theme Colors */
-    --bg: #121212;
-    --text: #e2e8f0;
-    --card-bg: #1e293b;
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --section-dark-bg: #1a1a1a;
-    --section-dark-text: #d1d5db;
+    --bg: #eaecee;
+    --text: #1e293b;
+    --card-bg: #f7f8fa;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08),
+        0 2px 4px -1px rgba(0, 0, 0, 0.04);
+
+    /* Section Colors */
+    --section-dark-bg: #dcdfe3;
+    --section-dark-text: #374151;
     --section-purple-gradient: linear-gradient(to right, var(--accent), #7c3aed);
-    --sidebar-bg: color-mix(in srgb, var(--bg) 95%, var(--accent) 5%);
-    --hover-bg: rgba(0, 0, 0, 0.05);
-    --hover-grey: #acacace6;
 
     /* Accent Colors */
     --accent: #3b82f6;
     --accent-hover: #2563eb;
     --accent-light: color-mix(in srgb, var(--accent), white 20%);
+
+    --sidebar-bg: #f1f2f4;
+    --hover-bg: rgba(0, 0, 0, 0.04);
+    --hover-grey: #555e68;
 
     /* Sizing & Spacing */
     --progress-height: 5px;

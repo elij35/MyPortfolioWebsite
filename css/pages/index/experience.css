@@ -17,7 +17,7 @@
     bottom: 0;
     left: 40px;
     width: 4px;
-    background: linear-gradient(to bottom, var(--accent), rgba(138, 43, 226, 0.3));
+    background: linear-gradient(to bottom, var(--accent), rgba(138, 43, 226, 0.25));
     border-radius: 2px;
 }
 
@@ -30,14 +30,19 @@
 
 /* Experience card styling */
 .timeline-card {
-    background: var(--section-dark-bg);
+    background: var(--card-bg);
     border-radius: 12px;
     padding: 2rem;
     width: 100%;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin-bottom: 2rem;
     position: relative;
+}
+
+.timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
 }
 
 .timeline-card::before {
@@ -49,7 +54,7 @@
     height: 0;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
-    border-right: 12px solid rgba(255, 255, 255, 0.15);
+    border-right: 12px solid var(--card-bg);
 }
 
 /* Date Styling */
@@ -57,11 +62,11 @@
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    display: block;
-    background-color: var(--accent);
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    display: inline-block;
+    color: #fff;
 }
 
 /* Company Logo & Header */
@@ -75,12 +80,17 @@
 
 .company-logo {
     height: 150px;
-    width: auto;
     max-width: 160px;
     border-radius: 8px;
     object-fit: contain;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    padding: 0.5rem;
     transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+    transform: scale(1.05);
 }
 
 /* Tags */
@@ -91,8 +101,18 @@
     margin-top: 1.5rem;
 }
 
-#dark-theme {
-    background-color: rgb(36, 36, 36);
+.card-badge {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 0.4rem 0.9rem;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+}
+
+.card-badge:hover {
+    background-color: var(--accent);
+    color: #fff;
 }
 
 /* Mobile Responsiveness */
@@ -106,13 +126,6 @@
         left: 20px;
     }
 
-    .blob-line {
-        width: 2px;
-        height: calc(100% - 25px);
-        margin-top: -12px;
-        margin-left: 0;
-    }
-
     .timeline-card {
         padding: 1.5rem;
         margin-left: 0;
@@ -124,14 +137,10 @@
         top: 30px;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-right: 10px solid rgba(255, 255, 255, 0.15);
-        border-left: none;
+        border-right: 10px solid var(--card-bg);
     }
 
     .experience-header {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
         gap: 1rem;
     }
 
@@ -143,16 +152,6 @@
     .timeline-date {
         font-size: 0.9rem;
         padding: 0.4rem 0.8rem;
-    }
-
-    .tech-tags {
-        gap: 0.6rem;
-        justify-content: center;
-    }
-
-    .tech-tag {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.8rem;
     }
 }
 
