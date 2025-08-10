@@ -53,7 +53,7 @@
 }
 
 .site-nav a:hover {
-    color: var(--hover-grey);
+    color: var(--accent-hover);
 }
 
 .site-nav a::after {
