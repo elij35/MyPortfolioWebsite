@@ -13,7 +13,12 @@
     justify-items: center;
 }
 
-.skills {
+.skills-category {
+    width: 100%;
+    max-width: 350px;
+}
+
+.skills-list {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -23,15 +28,16 @@
     margin: 0;
 }
 
-.skills li {
-    padding: 0.6rem 1.2rem;
+.skills-list li {
+    padding: 0.6rem 1.4rem;
     background: var(--card-bg);
     border-radius: 50px;
     font-weight: 500;
     font-size: 0.9rem;
-    box-shadow: var(--card-shadow);
-    border: 1px solid rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.15);
     text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: default;
 }
 
 /* Responsive adjustments */
