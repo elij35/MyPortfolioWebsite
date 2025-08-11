@@ -43,7 +43,7 @@
 
 .about-highlights .card {
     width: 80%;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 /* Responsive Layout */
@@ -57,9 +57,10 @@
 @media (max-width: 500px) {
     .about-text p {
         font-size: 0.8rem;
+        text-align: center;
     }
 
-    .about-image{
+    .about-image {
         max-width: 280px;
     }
 }
