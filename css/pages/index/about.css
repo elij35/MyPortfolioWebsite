@@ -10,8 +10,8 @@
 }
 
 .about-image {
-    flex: 0 0 300px;
-    max-width: 300px;
+    flex: 0 0 350px;
+    max-width: 350px;
 }
 
 .about-image img {
@@ -37,38 +37,13 @@
 
 /* Highlights */
 .about-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
-.highlight-card {
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.highlight-card h3 {
-    margin-bottom: 1rem;
-}
-
-.bullet-point ul {
-    padding-left: 1.2rem;
-}
-
-.bullet-point li {
-    list-style: none;
-    position: relative;
-    margin-bottom: 0.5rem;
-}
-
-.bullet-point li::before {
-    content: '▹';
-    position: absolute;
-    left: -1.2rem;
-    color: var(--accent);
+.about-highlights .card {
+    width: 80%;
+    margin: 0 auto; 
 }
 
 /* Responsive Layout */
@@ -77,9 +52,14 @@
         flex-direction: row;
         justify-content: space-between;
     }
+}
 
-    .highlight-card {
-        flex: 1;
-        min-width: 0;
+@media (max-width: 500px) {
+    .about-text p {
+        font-size: 0.8rem;
+    }
+
+    .about-image{
+        max-width: 280px;
     }
 }

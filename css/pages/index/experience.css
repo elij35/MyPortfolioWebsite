@@ -144,8 +144,20 @@
     }
 
     .timeline-date {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         padding: 0.4rem 0.8rem;
+    }
+
+    .experience-title {
+        font-size: 0.9rem;
+    }
+
+    .timeline-company {
+        font-size: 0.85rem;
+    }
+
+    .bullet-point ul li {
+        font-size: 0.82rem;
     }
 }
 
